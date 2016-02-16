@@ -2,8 +2,8 @@ JNI = /usr/lib/jvm/java-1.7.0-openjdk-amd64
 
 all: run
 
-helloWorld.class: java/helloWorld.java
-	$(JNI)/bin/javac -d ./class java/helloWorld.java
+helloWorld.class: java/HelloJNI.java
+	$(JNI)/bin/javac -d ./class java/HelloJNI.java
 
 hello_world: cpp/hello_world.c
 	gcc -o hello \
@@ -17,4 +17,4 @@ run: helloWorld.class hello_world
 	./hello
 
 clean:
-	rm -f class/helloWorld.class hello *.log
+	rm -f class/*.class hello *.log
