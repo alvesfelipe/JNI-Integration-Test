@@ -1,0 +1,40 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.class
+*.ko
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libs
+*.so
+*.dylib
+*.dll
+*.lib
+*.a
+*.la
+*.lo
+*.lai
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Package Files Java #
+*.jar
+*.war
+*.ear
+
+# Temporary file
+*.*~
