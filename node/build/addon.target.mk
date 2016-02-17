@@ -31,10 +31,10 @@ CFLAGS_CC_Debug := \
 	-std=gnu++0x
 
 INCS_Debug := \
-	-I/home/danilo/.node-gyp/5.6.0/include/node \
-	-I/home/danilo/.node-gyp/5.6.0/src \
-	-I/home/danilo/.node-gyp/5.6.0/deps/uv/include \
-	-I/home/danilo/.node-gyp/5.6.0/deps/v8/include
+	-I/home/felipe/.node-gyp/5.6.0/include/node \
+	-I/home/felipe/.node-gyp/5.6.0/src \
+	-I/home/felipe/.node-gyp/5.6.0/deps/uv/include \
+	-I/home/felipe/.node-gyp/5.6.0/deps/v8/include
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=addon' \
@@ -65,10 +65,10 @@ CFLAGS_CC_Release := \
 	-std=gnu++0x
 
 INCS_Release := \
-	-I/home/danilo/.node-gyp/5.6.0/include/node \
-	-I/home/danilo/.node-gyp/5.6.0/src \
-	-I/home/danilo/.node-gyp/5.6.0/deps/uv/include \
-	-I/home/danilo/.node-gyp/5.6.0/deps/v8/include
+	-I/home/felipe/.node-gyp/5.6.0/include/node \
+	-I/home/felipe/.node-gyp/5.6.0/src \
+	-I/home/felipe/.node-gyp/5.6.0/deps/uv/include \
+	-I/home/felipe/.node-gyp/5.6.0/deps/v8/include
 
 OBJS := \
 	$(obj).target/$(TARGET)/summ.o \
