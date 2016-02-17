@@ -1,7 +1,7 @@
 // summ.cc
 #include <node.h>
 #include <v8.h>
-#include "example.h"
+#include "mainController.h"
 
 
 namespace demo {
@@ -15,15 +15,17 @@ using v8::Value;
 
 void Method(const FunctionCallbackInfo<Value>& args) {
   Isolate* isolate = args.GetIsolate();
+  
   printf("\n\n");
-  example *ex = new example();
+  mainController *ex = new mainController();
   ex->printArguments();
   printf("\n\n");
+
   args.GetReturnValue().Set(String::NewFromUtf8(isolate, "world"));
 }
 
 void init(Local<Object> exports) {
-  NODE_SET_METHOD(exports, "hello", Method);
+  NODE_SET_METHOD(exports, "sumarize", Method);
 }
 
 NODE_MODULE(addon, init)
