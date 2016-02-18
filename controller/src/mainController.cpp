@@ -23,10 +23,10 @@ void MainController::invoke_class(JNIEnv *env){
     jclass hello_world_class;
     jmethodID main_method;
     jmethodID foi;
-    jmethodID square_method;
-    jmethodID power_method;
-    jint number=20;
-    jint exponent=3;
+    //jmethodID square_method;
+    //jmethodID power_method;
+    //jint number=20;
+    //jint exponent=3;
     hello_world_class = env->FindClass("HelloJNI");
     main_method = env->GetStaticMethodID(hello_world_class, "main", "([Ljava/lang/String;)V");
     foi = env->GetStaticMethodID(hello_world_class, "foi", "()V");

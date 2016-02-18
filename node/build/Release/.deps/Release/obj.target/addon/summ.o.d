@@ -5,7 +5,7 @@ Release/obj.target/addon/summ.o: ../summ.cc \
  /home/felipe/.node-gyp/5.6.0/include/node/v8-version.h \
  /home/felipe/.node-gyp/5.6.0/include/node/v8config.h \
  /home/felipe/.node-gyp/5.6.0/include/node/node_version.h \
- /home/felipe/.node-gyp/5.6.0/include/node/v8.h ../mainController.h
+ /home/felipe/.node-gyp/5.6.0/include/node/v8.h
 ../summ.cc:
 /home/felipe/.node-gyp/5.6.0/include/node/node.h:
 /home/felipe/.node-gyp/5.6.0/include/node/v8.h:
@@ -13,4 +13,3 @@ Release/obj.target/addon/summ.o: ../summ.cc \
 /home/felipe/.node-gyp/5.6.0/include/node/v8config.h:
 /home/felipe/.node-gyp/5.6.0/include/node/node_version.h:
 /home/felipe/.node-gyp/5.6.0/include/node/v8.h:
-../mainController.h:

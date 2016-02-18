@@ -1,8 +1,7 @@
 // summ.cc
 #include <node.h>
 #include <v8.h>
-#include "mainController.h"
-
+//#include "../controller/include/mainController.h"
 
 namespace demo {
 
@@ -17,8 +16,8 @@ void Method(const FunctionCallbackInfo<Value>& args) {
   Isolate* isolate = args.GetIsolate();
   
   printf("\n\n");
-  mainController *ex = new mainController();
-  ex->printArguments();
+  //mainController *mc = new mainController();
+  //mc->;
   printf("\n\n");
 
   args.GetReturnValue().Set(String::NewFromUtf8(isolate, "world"));
