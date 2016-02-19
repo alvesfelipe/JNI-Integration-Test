@@ -1,0 +1,11 @@
+maincontroller.pc:
+prefix=/usr/local
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib/libraryController
+
+Name: libmaincontroller
+Description: Used to link C++ and Java source codes with JNI
+Version: 1.0.0
+Cflags: -I${includedir}/maincontroller
+Libs: -L${libdir} -lmaincontroller

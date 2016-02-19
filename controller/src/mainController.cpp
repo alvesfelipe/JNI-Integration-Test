@@ -42,6 +42,10 @@ void MainController::invoke_class(JNIEnv *env){
     */
 }
 
+void MainController::testOut(){
+    printf("\nAQUI ESTOU MAIS UM DIA!!\n");
+}
+
 MainController::MainController(){}
 
 MainController::~MainController(){}

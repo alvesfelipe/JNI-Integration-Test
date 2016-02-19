@@ -1,7 +1,6 @@
-// summ.cc
 #include <node.h>
 #include <v8.h>
-//#include "../controller/include/mainController.h"
+#include "mainController.h"
 
 namespace demo {
 
@@ -13,14 +12,15 @@ using v8::String;
 using v8::Value;
 
 void Method(const FunctionCallbackInfo<Value>& args) {
-  Isolate* isolate = args.GetIsolate();
+  	Isolate* isolate = args.GetIsolate();
   
-  printf("\n\n");
-  //mainController *mc = new mainController();
-  //mc->;
-  printf("\n\n");
+  	MainController *mc = new MainController();
+  	mc->testOut();
+  	//env = mc->create_vm(jvm);
+    //mc->invoke_class(env);
 
-  args.GetReturnValue().Set(String::NewFromUtf8(isolate, "world"));
+	//audio path to nodejs
+	args.GetReturnValue().Set(String::NewFromUtf8(isolate, "world"));
 }
 
 void init(Local<Object> exports) {

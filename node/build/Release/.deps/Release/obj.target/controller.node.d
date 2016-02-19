@@ -1,0 +1,1 @@
+cmd_Release/obj.target/controller.node := g++ -shared -pthread -rdynamic -m64 -L/usr/local/lib/libraryController/ -lmaincontroller  -Wl,-soname=controller.node -o Release/obj.target/controller.node -Wl,--start-group Release/obj.target/controller/nativeController.o -Wl,--end-group /usr/local/lib/libraryController/libmaincontroller.so
