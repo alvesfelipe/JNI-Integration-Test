@@ -17,7 +17,7 @@ void Method(const FunctionCallbackInfo<Value>& args) {
   	MainController *mc = new MainController();
   	mc->testOut();
   	//env = mc->create_vm(jvm);
-    //mc->invoke_class(env);
+    mc->callHello();
 
 	//audio path to nodejs
 	args.GetReturnValue().Set(String::NewFromUtf8(isolate, "world"));
@@ -27,6 +27,6 @@ void init(Local<Object> exports) {
   NODE_SET_METHOD(exports, "sumarize", Method);
 }
 
-NODE_MODULE(addon, init)
+NODE_MODULE(addon, init);
 
 }  // namespace demo

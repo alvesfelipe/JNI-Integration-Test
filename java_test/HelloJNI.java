@@ -1,10 +1,10 @@
 public class HelloJNI {
 
-	public static void foi() {
-		System.out.println("foiCaralha!!!");
+	public static void teste() {
+		System.out.println("\nMETODO ESTATICO DO HelloJNI...\n");
 	}
 	// Test Driver
 	public static void main(String[] args) {
-		System.out.println("Daniloooo");		
+		System.out.println("\nMAIN DO HelloJNI...\n");		
 	}
 }

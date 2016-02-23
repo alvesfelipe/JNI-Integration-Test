@@ -35,7 +35,8 @@ INCS_Debug := \
 	-I/home/felipe/.node-gyp/5.6.0/src \
 	-I/home/felipe/.node-gyp/5.6.0/deps/uv/include \
 	-I/home/felipe/.node-gyp/5.6.0/deps/v8/include \
-	-I/home/felipe/main_controller/controller/include
+	-I/home/felipe/main_controller/controller/include \
+	-I/usr/lib/jvm/java-1.7.0-openjdk-amd64/include
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=controller' \
@@ -70,7 +71,8 @@ INCS_Release := \
 	-I/home/felipe/.node-gyp/5.6.0/src \
 	-I/home/felipe/.node-gyp/5.6.0/deps/uv/include \
 	-I/home/felipe/.node-gyp/5.6.0/deps/v8/include \
-	-I/home/felipe/main_controller/controller/include
+	-I/home/felipe/main_controller/controller/include \
+	-I/usr/lib/jvm/java-1.7.0-openjdk-amd64/include
 
 OBJS := \
 	$(obj).target/$(TARGET)/nativeController.o
@@ -104,17 +106,22 @@ LDFLAGS_Debug := \
 	-rdynamic \
 	-m64 \
 	-L/usr/local/lib/libraryController/ \
-	-lmaincontroller
+	-lmaincontroller \
+	-L/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/ \
+	-ljvm
 
 LDFLAGS_Release := \
 	-pthread \
 	-rdynamic \
 	-m64 \
 	-L/usr/local/lib/libraryController/ \
-	-lmaincontroller
+	-lmaincontroller \
+	-L/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/ \
+	-ljvm
 
 LIBS := \
-	/usr/local/lib/libraryController/libmaincontroller.so
+	/usr/local/lib/libraryController/libmaincontroller.so \
+	/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so
 
 $(obj).target/controller.node: GYP_LDFLAGS := $(LDFLAGS_$(BUILDTYPE))
 $(obj).target/controller.node: LIBS := $(LIBS)
