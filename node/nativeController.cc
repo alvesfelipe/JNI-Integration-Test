@@ -15,9 +15,12 @@ void Method(const FunctionCallbackInfo<Value>& args) {
   	Isolate* isolate = args.GetIsolate();
   
   	MainController *mc = new MainController();
+  	//jni pointer to a structure storing all JNI function pointers
+    JNIEnv *env;
+
   	mc->testOut();
-  	//env = mc->create_vm(jvm);
-    mc->callHello();
+  	env = mc->createVm("/home/felipe/main_controller/class_test");
+    mc->callHello(env);
 
 	//audio path to nodejs
 	args.GetReturnValue().Set(String::NewFromUtf8(isolate, "world"));

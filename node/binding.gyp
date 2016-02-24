@@ -11,7 +11,6 @@
       ],
       "libraries": [
         '/usr/local/lib/libraryController/libmaincontroller.so',
-        '/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so',
       ],
       'ldflags': [
         '-L/usr/local/lib/libraryController/',

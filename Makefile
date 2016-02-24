@@ -12,7 +12,7 @@ maincontroller.bin: controller/src/
 	-L $(JNI)/jre/lib/amd64/server/ \
 	-I $(JNI)/include/ \
 	-I $(JNI)/include/linux/ \
-	controller/src/*.cpp -ljvm -Wno-write-strings
+	controller/src/*.cpp -fPIC -ljvm -Wno-write-strings
 
 maincontroller.o: controller/src/
 	g++ -Wall -g -o controller/libraryController/mainController.o -shared -fPIC \
@@ -28,7 +28,7 @@ maincontroller.so: controller/src/
 	-L $(JNI)/jre/lib/amd64/server/ -ljvm
 
 configure:
-	echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(JNI)/jre/lib/amd64/server:/usr/local/lib/libraryController: open -a rstudio" >> ~/.bashrc
+	echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(JNI)/jre/lib/amd64/server:/usr/local/lib/libraryController" >> ~/.bashrc
 	rm -f controller/libraryController/*.o &&\
 	cp -avr controller/libraryController /usr/local/lib &&\
 	cd /usr/local/lib/libraryController && sudo ln -f -s libmaincontroller-1.0.so libmaincontroller.so; 2> /dev/null

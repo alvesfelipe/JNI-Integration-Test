@@ -3,6 +3,10 @@
 
 #include <stdio.h>
 #include <jni.h>
+#include <string.h>
+#include <iostream>
+
+using namespace std;
 
 class MainController{
 
@@ -11,8 +15,8 @@ class MainController{
 	
 	public:
 		//JNI functions
-		JNIEnv* createVm();
-		void callHello();
+		JNIEnv* createVm(string pathClass);
+		void callHello(JNIEnv* env);
 
 		//main controller functions
 		void testOut();

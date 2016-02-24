@@ -120,8 +120,7 @@ LDFLAGS_Release := \
 	-ljvm
 
 LIBS := \
-	/usr/local/lib/libraryController/libmaincontroller.so \
-	/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+	/usr/local/lib/libraryController/libmaincontroller.so
 
 $(obj).target/controller.node: GYP_LDFLAGS := $(LDFLAGS_$(BUILDTYPE))
 $(obj).target/controller.node: LIBS := $(LIBS)

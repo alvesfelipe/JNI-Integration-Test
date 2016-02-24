@@ -1,30 +1,41 @@
 #include "mainController.h"
 
-JNIEnv* MainController::createVm(){
-    JavaVM *jvm;
+JNIEnv* MainController::createVm(string pathClass){
+    JavaVM* jvm;
+    //jni pointer to a structure storing all JNI function pointers
     JNIEnv* env;
     JavaVMInitArgs args;
     JavaVMOption options;
     args.version = JNI_VERSION_1_6;
     args.nOptions = 1;
-    options.optionString = "-Djava.class.path=/home/felipe/main_controller/class_test";
+    
+    //pass the path from .class by argument
+    string path = "-Djava.class.path=";
+    path += pathClass;
+    char* p = new char[path.size() + 1];
+    std::copy(path.begin(), path.end(), p);
+    p[path.size()] = '\0';
+    
+    options.optionString = p;//"-Djava.class.path=/home/felipe/main_controller/class_test";
     args.options = &options;
     args.ignoreUnrecognized = 0;
     int rv;
+    
     rv = JNI_CreateJavaVM(&jvm, (void**)&env, &args);
+    
     if (rv < 0 || !env){
         printf("Unable to Launch JVM %d\n",rv); 
         return NULL;
     }
     else{
-        printf("\nINICIOU A JVM\n");
+        printf("\nINICIOU A JVM...\n");
         return env;
     }    
 }
 
-void MainController::callHello(){
+void MainController::callHello(JNIEnv* env){
 
-    JNIEnv *env = createVm();
+    //JNIEnv *env = createVm();
     jclass hello_world_class;
     jmethodID main_method;
     jmethodID teste;
