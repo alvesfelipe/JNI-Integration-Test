@@ -28,7 +28,7 @@ maincontroller.so: controller/src/
 	-L $(JNI)/jre/lib/amd64/server/ -ljvm
 
 configure:
-	echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(JNI)/jre/lib/amd64/server:/usr/local/lib/libraryController" >> ~/.bashrc
+	#echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(JNI)/jre/lib/amd64/server:/usr/local/lib/libraryController" >> ~/.bashrc
 	rm -f controller/libraryController/*.o &&\
 	cp -avr controller/libraryController /usr/local/lib &&\
 	cd /usr/local/lib/libraryController && sudo ln -f -s libmaincontroller-1.0.so libmaincontroller.so; 2> /dev/null

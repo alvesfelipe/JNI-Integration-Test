@@ -32,4 +32,4 @@ void init(Local<Object> exports) {
 
 NODE_MODULE(addon, init);
 
-}  // namespace demo
+}
