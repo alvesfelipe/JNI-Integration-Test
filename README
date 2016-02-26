@@ -1,0 +1,25 @@
+### Instructions ###
+
+
+----------------------------------------------------
+* Install packages
+
+- Install manually java-7-openjdk-amd64 and some packages: build-essentials, node v5.6.0, node-gyp v3.2.1
+
+To install build-essential package, type:
+
+sudo apt-get install build-essential
+
+After download node version 5.6.0 <https://nodejs.org/en/download/>, extract it on /opt/ folder. Using the terminal, type: 
+
+./configure
+make
+sudo make install
+
+The next step is install node-gyp. Type: <https://github.com/nodejs/node-gyp>
+
+npm install -g node-gyp
+
+- Check if your jdk is installed on /usr/lib/jvm/java-7-openjdk-amd64 folder. If its is not there, you can modify on makefile the correct path on JNI variable or install from terminal the packages:
+
+sudo apt-get install openjdk-7-jdk openjdk-7-jre
