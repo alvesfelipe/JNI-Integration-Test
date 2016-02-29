@@ -4,16 +4,32 @@
 ----------------------------------------------------
 * Install packages
 
-- Install manually java-7-openjdk-amd64 and some packages: build-essentials, node v5.6.0, node-gyp v3.2.1
+- Install manually java-7-openjdk-amd64 and some packages: build-essentials, node v5.6.0, node-gyp v3.2.1, ant
 
 To install build-essential package, type:
 
 sudo apt-get install build-essential
 
-After download node version 5.6.0 <https://nodejs.org/en/download/>, extract it on /opt/ folder. Using the terminal, type: 
+After download node version 5.6.0 <https://nodejs.org/en/download/>, extract it on /opt/ folder or install by terminal, type: 
+
+Node.js:
+
+sudo apt-get install nodejs
+
+Node package manager:
+
+sudo apt-get install npm
+
+Create a symbolic link for node:
+
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+
+Install ant:
+
+sudo apt-get install ant
 
 ./configure
-make
+sudo make
 sudo make install
 
 The next step is install node-gyp. Type: <https://github.com/nodejs/node-gyp>

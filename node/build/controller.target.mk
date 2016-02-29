@@ -31,10 +31,10 @@ CFLAGS_CC_Debug := \
 	-std=gnu++0x
 
 INCS_Debug := \
-	-I/home/felipe/.node-gyp/5.6.0/include/node \
-	-I/home/felipe/.node-gyp/5.6.0/src \
-	-I/home/felipe/.node-gyp/5.6.0/deps/uv/include \
-	-I/home/felipe/.node-gyp/5.6.0/deps/v8/include \
+	-I/home/felipe/.node-gyp/5.7.0/include/node \
+	-I/home/felipe/.node-gyp/5.7.0/src \
+	-I/home/felipe/.node-gyp/5.7.0/deps/uv/include \
+	-I/home/felipe/.node-gyp/5.7.0/deps/v8/include \
 	-I/home/felipe/main_controller/controller/include \
 	-I/usr/lib/jvm/java-1.7.0-openjdk-amd64/include
 
@@ -67,10 +67,10 @@ CFLAGS_CC_Release := \
 	-std=gnu++0x
 
 INCS_Release := \
-	-I/home/felipe/.node-gyp/5.6.0/include/node \
-	-I/home/felipe/.node-gyp/5.6.0/src \
-	-I/home/felipe/.node-gyp/5.6.0/deps/uv/include \
-	-I/home/felipe/.node-gyp/5.6.0/deps/v8/include \
+	-I/home/felipe/.node-gyp/5.7.0/include/node \
+	-I/home/felipe/.node-gyp/5.7.0/src \
+	-I/home/felipe/.node-gyp/5.7.0/deps/uv/include \
+	-I/home/felipe/.node-gyp/5.7.0/deps/v8/include \
 	-I/home/felipe/main_controller/controller/include \
 	-I/usr/lib/jvm/java-1.7.0-openjdk-amd64/include
 

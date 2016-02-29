@@ -1,10 +1,12 @@
 JNI = /usr/lib/jvm/java-1.7.0-openjdk-amd64
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(JNI)/jre/lib/amd64/server:/usr/local/lib/libraryController
+export JAVA_HOME=$(JNI)
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(JNI)/lib/amd64:$(JNI)/jre/lib/amd64/server:/usr/local/lib/libraryController
 
 all: run
 
 java.class: java_test/HelloJNI.java
 	$(JNI)/bin/javac -d ./class_test java_test/HelloJNI.java
+	#~/gtad-summ/ad-generator && ant -buildfile build.xml
 
 maincontroller.bin: controller/src/
 	g++ -o control \
@@ -28,7 +30,9 @@ maincontroller.so: controller/src/
 	-L $(JNI)/jre/lib/amd64/server/ -ljvm
 
 configure:
-	#echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(JNI)/jre/lib/amd64/server:/usr/local/lib/libraryController" >> ~/.bashrc
+	echo "export JAVA_HOME=$(JNI)" >> ~/.bashrc
+	echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(JNI)/jre/lib/amd64/server:/usr/local/lib/libraryController" >> ~/.bashrc
+	#echo "export LD_LIBRARY_PATH=$(JNI)/lib/amd64:$(JNI)/jre/lib/amd64/server" >> ~/.profile
 	rm -f controller/libraryController/*.o &&\
 	cp -avr controller/libraryController /usr/local/lib &&\
 	cd /usr/local/lib/libraryController && sudo ln -f -s libmaincontroller-1.0.so libmaincontroller.so; 2> /dev/null
@@ -42,5 +46,5 @@ node.js: node/test.js
 run: java.class maincontroller.bin maincontroller.o maincontroller.so configure node.js
 
 clean:
-	rm -rf class_test/*.class control *.log controller/libraryController/*.so /usr/local/lib/libraryController
+	rm -rf class_test/*.class control *.log controller/libraryController/*.so /usr/local/lib/libraryController node/*.log
 	cd node && node-gyp clean

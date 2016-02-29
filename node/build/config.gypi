@@ -36,7 +36,6 @@
     "node_use_perfctr": "false",
     "openssl_fips": "",
     "openssl_no_asm": 0,
-    "python": "/usr/bin/python",
     "target_arch": "x64",
     "uv_parent_path": "/deps/uv/",
     "uv_use_dtrace": "false",
@@ -47,7 +46,7 @@
     "v8_random_seed": 0,
     "v8_use_snapshot": "true",
     "want_separate_host_toolset": 0,
-    "nodedir": "/home/felipe/.node-gyp/5.6.0",
+    "nodedir": "/home/felipe/.node-gyp/5.7.0",
     "copy_dev_lib": "true",
     "standalone_static_library": 1
   }

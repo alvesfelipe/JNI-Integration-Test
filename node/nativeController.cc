@@ -16,11 +16,11 @@ void Method(const FunctionCallbackInfo<Value>& args) {
   
   	MainController *mc = new MainController();
   	//jni pointer to a structure storing all JNI function pointers
-    JNIEnv *env;
+    //JNIEnv *env;
 
   	mc->testOut();
-  	env = mc->createVm("/home/felipe/main_controller/class_test");
-    mc->callHello(env);
+  	//env = mc->createVm("/home/felipe/main_controller/class_test");
+    mc->callHello(mc->createVm("/home/felipe/main_controller/class_test"));
 
 	//audio path to nodejs
 	args.GetReturnValue().Set(String::NewFromUtf8(isolate, "world"));
